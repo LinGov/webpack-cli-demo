@@ -6,6 +6,11 @@ module.exports = merge(baseConfig, {
     new HtmlWebpackPlugin({
       template: 'index.html',
       filename: 'index.html',
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeAttributeQuotes: true,
+      },
     }),
   ],
 });

@@ -50,7 +50,7 @@
 - webpack-hot-middleware
 - webpack-build-notifier
 - friendly-errors-webpack-plugin
-- html-webpack-plugin
+- [html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin#options)：在指定的 template 中动态插入 js 变量、通过内置变量动态生成/插入标签、压缩 html 格式。
 - progress-bar-webpack-plugin
 - mini-css-extract-plugin
 - hard-source-webpack-plugin

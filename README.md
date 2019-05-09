@@ -16,7 +16,7 @@
 - uglify-es
 - opn
 - connect-history-api-fallback
-- cross-env：屏蔽开发所处操作系统的差异，提供一致的设置环境变量的命令。
+- cross-env：屏蔽开发所处操作系统差异，提供一致的设置 Node 环境变量的命令。
 - lint-staged
 
 ## loader

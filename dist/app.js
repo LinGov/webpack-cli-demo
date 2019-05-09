@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("\n\n//# sourceURL=webpack:///./src/main.js?");
+eval("function append(id, child) {\n  document.getElementById(id).append(child);\n}\n\nappend('app', 'hello,world');\n\n\n//# sourceURL=webpack:///./src/main.js?");
 
 /***/ })
 

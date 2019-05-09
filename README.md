@@ -46,7 +46,7 @@
 
 ### 社区插件
 
-- webpack-dev-middleware
+- [webpack-dev-middleware](https://github.com/webpack/webpack-dev-middleware)：webpack-dev-middleware 是一个封装器(wrapper)，它可以把 webpack 处理过的文件发送到一个 server。
 - webpack-hot-middleware
 - webpack-build-notifier
 - friendly-errors-webpack-plugin

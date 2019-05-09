@@ -1,5 +1,5 @@
 const path = require('path');
-
+const webpack = require('webpack');
 const env = process.env.NODE_ENV;
 
 module.exports = {
@@ -9,5 +9,13 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, '../dist'),
+    filename: '[name].js',
+    publicPath: '/',
   },
+  plugins: [
+    new webpack.DllReferencePlugin({
+      context: path.resolve(__dirname, '..'),
+      manifest: require('./vendor-manifest.json'),
+    }),
+  ],
 };

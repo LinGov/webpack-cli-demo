@@ -14,6 +14,7 @@ const compiler = webpack(devConfig);
 
 const devMiddleware = webpackDevMiddleware(compiler);
 app.use(devMiddleware);
+app.use('/static', express.static('./static'));
 
 module.exports = portfinder
   .getPortPromise()

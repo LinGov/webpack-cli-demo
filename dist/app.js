@@ -77,7 +77,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
+/******/ 	__webpack_require__.p = "/";
 /******/
 /******/
 /******/ 	// Load entry module and return exports
@@ -86,14 +86,37 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./node_modules/lodash/lodash.js":
+/*!***********************************************************************************!*\
+  !*** delegated ./node_modules/lodash/lodash.js from dll-reference vendor_library ***!
+  \***********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = (__webpack_require__(/*! dll-reference vendor_library */ \"dll-reference vendor_library\"))(1);\n\n//# sourceURL=webpack:///delegated_./node_modules/lodash/lodash.js_from_dll-reference_vendor_library?");
+
+/***/ }),
+
 /***/ "./src/main.js":
 /*!*********************!*\
   !*** ./src/main.js ***!
   \*********************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);\n\nfunction append(id, child) {\n  document.getElementById(id).append(lodash__WEBPACK_IMPORTED_MODULE_0___default.a.concat(['hello', child]));\n}\n\nappend('app', 'hello,world');\n\n\n//# sourceURL=webpack:///./src/main.js?");
+
+/***/ }),
+
+/***/ "dll-reference vendor_library":
+/*!*********************************!*\
+  !*** external "vendor_library" ***!
+  \*********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("function append(id, child) {\n  document.getElementById(id).append(child);\n}\n\nappend('app', 'hello,world');\n\n\n//# sourceURL=webpack:///./src/main.js?");
+eval("module.exports = vendor_library;\n\n//# sourceURL=webpack:///external_%22vendor_library%22?");
 
 /***/ })
 

@@ -40,8 +40,9 @@
 - webpack.HotModuleReplacementPlugin
 - webpack.NoEmitOnErrorsPlugin
 - webpack.optimize.ModuleConcatenationPlugin
-- webpack.DllPlugin
-- webpack.DllReferencePlugin
+- [webpack.DllPlugin](https://webpack.docschina.org/plugins/dll-plugin/)：在构建前预先对第三方库进行构建，创建一个只有 dll 的 bundle(dll-only-bundle) 和与之对应的 manifest.json，用于 DLLReferencePlugin 映射到相关的依赖上去的。
+- [webpack.DllReferencePlugin](https://webpack.docschina.org/plugins/dll-plugin/)：通过引用 webpack.DllPlugin 生成的 manifest.json，避免第三方库的重复构建。
+- [autodll-webpack-plugin](https://github.com/asfktz/autodll-webpack-plugin)：以上两个插件的结合简化版本。
 - webpack.LoaderOptionsPlugin
 
 ### 社区插件
@@ -53,7 +54,7 @@
 - [html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin#options)：在指定的 template 中动态插入 js 变量、通过内置变量动态生成/插入标签、压缩 html 格式。
 - progress-bar-webpack-plugin
 - mini-css-extract-plugin
-- hard-source-webpack-plugin
+- [hard-source-webpack-plugin](https://github.com/mzgoddard/hard-source-webpack-plugin)：提供初次构建中间缓存步骤，加快再次构建的速度。
 - optimize-css-assets-webpack-plugin
 - uglifyjs-webpack-plugin
 - add-asset-html-webpack-plugin

@@ -12,6 +12,7 @@ module.exports = {
   },
   plugins: [
     new webpack.DllPlugin({
+      inject: true,
       path: path.join(__dirname, '.', '[name]-manifest.json'),
       name: '[name]_library',
     }),

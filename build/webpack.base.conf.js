@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const AutoDLLPLugin = require('autodll-webpack-plugin');
 const env = process.env.NODE_ENV;
 
 module.exports = {
@@ -13,9 +14,16 @@ module.exports = {
     publicPath: '/',
   },
   plugins: [
-    new webpack.DllReferencePlugin({
+    /*   new webpack.DllReferencePlugin({
       context: path.resolve(__dirname, '..'),
       manifest: require('./vendor-manifest.json'),
+    }), */
+
+    new AutoDLLPLugin({
+      filename: '[name].dll.js',
+      entry: {
+        vendor: ['lodash'],
+      },
     }),
   ],
 };

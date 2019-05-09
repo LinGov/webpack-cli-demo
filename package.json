@@ -22,6 +22,7 @@
   "homepage": "https://github.com/LinGov/webpack-demo#readme",
   "devDependencies": {
     "address": "^1.1.0",
+    "autodll-webpack-plugin": "^0.4.2",
     "chalk": "^2.4.2",
     "cross-env": "^5.2.0",
     "friendly-errors-webpack-plugin": "^1.7.0",

@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/LinGov/webpack-demo#readme",
   "devDependencies": {
+    "chalk": "^2.4.2",
     "cross-env": "^5.2.0",
     "html-webpack-plugin": "^3.2.0",
     "portfinder": "^1.0.20",

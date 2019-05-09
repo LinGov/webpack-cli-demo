@@ -4,7 +4,7 @@
 
 ## library
 
-- webpack-merge：合并 webpack 配置，用于抽取 development/production 公共配置。
+- webpack-merge：合并 webpack 配置，抽取 development/production 公共配置。
 - ora
 - chalk
 - happypack

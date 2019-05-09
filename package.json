@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/LinGov/webpack-demo#readme",
   "devDependencies": {
+    "cross-env": "^5.2.0",
     "webpack": "^4.30.0",
     "webpack-cli": "^3.3.2",
     "webpack-merge": "^4.2.1"

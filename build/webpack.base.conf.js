@@ -6,7 +6,10 @@ const env = process.env.NODE_ENV;
 module.exports = {
   mode: env === 'production' ? 'production' : 'development',
   entry: {
-    app: './src/main.js',
+    app: [
+      'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000',
+      './src/main.js',
+    ],
   },
   output: {
     path: path.resolve(__dirname, '../dist'),

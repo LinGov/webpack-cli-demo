@@ -1,5 +1,6 @@
 const merge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 const baseConfig = require('./webpack.base.conf');
 
 module.exports = merge(baseConfig, {
@@ -8,5 +9,7 @@ module.exports = merge(baseConfig, {
       template: 'index.html',
       filename: 'index.html',
     }),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
   ],
 });

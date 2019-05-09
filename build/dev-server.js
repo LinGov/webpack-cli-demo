@@ -1,6 +1,7 @@
 const express = require('express');
 const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
+const webpackHotMiddleware = require('webpack-hot-middleware');
 const portfinder = require('portfinder');
 const utils = require('./utils');
 const chalk = require('chalk');
@@ -13,7 +14,9 @@ portfinder.basePort = PORT;
 const compiler = webpack(devConfig);
 
 const devMiddleware = webpackDevMiddleware(compiler);
+const hotMiddleware = webpackHotMiddleware(compiler);
 app.use(devMiddleware);
+app.use(hotMiddleware);
 app.use('/static', express.static('./static'));
 
 module.exports = portfinder

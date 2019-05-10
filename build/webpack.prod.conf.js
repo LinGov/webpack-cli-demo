@@ -69,6 +69,12 @@ module.exports = merge(baseConfig, {
           // 默认组的优先级为负数，以允许任何自定义缓存组具有更高的优先级（默认值为0）
           priority: -10,
         },
+        styles: {
+          name: 'styles',
+          test: /\.css$/,
+          chunks: 'all',
+          enforce: true,
+        },
       },
     }),
     new ParallelUglifyPlugin({

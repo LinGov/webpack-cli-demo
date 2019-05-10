@@ -57,7 +57,7 @@
 - [friendly-errors-webpack-plugin](https://www.npmjs.com/package/friendly-errors-webpack-plugin)：webpack 构建过程添加友好的错误提示。
 - [html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin#options)：在指定的 template 中动态插入 js 变量、通过内置变量动态生成/插入标签、压缩 html 格式。
 - progress-bar-webpack-plugin
-- mini-css-extract-plugin
+- [mini-css-extract-plugin](https://www.npmjs.com/package/mini-css-extract-plugin)：分离 css 至单独文件
 - [hard-source-webpack-plugin](https://github.com/mzgoddard/hard-source-webpack-plugin)：提供初次构建中间缓存步骤，加快再次构建的速度。
 - optimize-css-assets-webpack-plugin
 - [uglifyjs-webpack-plugin](https://www.npmjs.com/package/uglifyjs-webpack-plugin/v/1.3.0)：压缩 js 代码。

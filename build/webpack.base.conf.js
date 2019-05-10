@@ -1,10 +1,11 @@
 const webpack = require('webpack');
 const path = require('path');
 const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const utils = require('./utils');
 const config = require('../config');
 const env = process.env.NODE_ENV;
-
+const devMode = env !== 'production';
 function resolve(dir) {
   return path.join(__dirname, '..', dir);
 }
@@ -42,8 +43,17 @@ module.exports = {
         loaders: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.scss$/,
-        loaders: ['style-loader', 'css-loader', 'sass-loader'],
+        test: /\.(sa|sc|c)ss$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              hmr: devMode,
+            },
+          },
+          'css-loader',
+          'sass-loader',
+        ],
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
@@ -77,6 +87,16 @@ module.exports = {
       context: path.resolve(__dirname, '..'),
       manifest: require('./vendor-manifest.json'),
     }), */
+    new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
+      filename: devMode
+        ? utils.assetsPath('css/[name].css')
+        : utils.assetsPath('css/[name].[hash].css'),
+      chunkFilename: devMode
+        ? utils.assetsPath('css/[id].css')
+        : utils.assetsPath('css/[id].[hash].css'),
+    }),
     new HardSourceWebpackPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
   ],

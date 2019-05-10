@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
+const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 const utils = require('./utils');
-
 const config = require('../config');
 const env = process.env.NODE_ENV;
 
@@ -44,7 +44,7 @@ module.exports = {
       context: path.resolve(__dirname, '..'),
       manifest: require('./vendor-manifest.json'),
     }), */
-
+    new HardSourceWebpackPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
   ],
 };

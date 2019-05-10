@@ -36,6 +36,7 @@
 
 ### 内置插件
 
+- webpack.optimize.SplitChunksPlugin：分割文件
 - webpack.DefinePlugin
 - webpack.HotModuleReplacementPlugin
 - [webpack.NoEmitOnErrorsPlugin](https://www.webpackjs.com/plugins/no-emit-on-errors-plugin)：在编译出现错误时，使用 NoEmitOnErrorsPlugin 来跳过输出阶段。这样可以确保输出资源不会包含错误。

@@ -29,7 +29,7 @@ module.exports = merge(baseConfig, {
         },
       },
     }),
-    /* new ParallelUglifyPlugin({
+    new ParallelUglifyPlugin({
       cache: './cache',
       uglifyJS: {
         output: {
@@ -43,7 +43,7 @@ module.exports = merge(baseConfig, {
           reduce_vars: true,
         },
       },
-    }), */
+    }),
     new HtmlWebpackPlugin({
       inject: true,
       template: 'index.html',

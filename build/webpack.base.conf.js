@@ -19,6 +19,7 @@ module.exports = {
   },
   plugins: [
     /*   new webpack.DllReferencePlugin({
+      inject: true,
       context: path.resolve(__dirname, '..'),
       manifest: require('./vendor-manifest.json'),
     }), */

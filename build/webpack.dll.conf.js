@@ -1,8 +1,9 @@
 const webpack = require('webpack');
 const path = require('path');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
+  mode: 'production',
   entry: {
     vendor: ['lodash'],
   },
@@ -11,9 +12,23 @@ module.exports = {
     filename: '[name].dll.js',
     library: '[name]_library',
   },
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin({
+        cache: true,
+        parallel: true,
+        sourceMap: false,
+        uglifyOptions: {
+          output: {
+            comments: false,
+            beautify: false,
+          },
+        },
+      }),
+    ],
+  },
   plugins: [
     new webpack.DllPlugin({
-      inject: true,
       path: path.join(__dirname, '.', '[name]-manifest.json'),
       name: '[name]_library',
     }),

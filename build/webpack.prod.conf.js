@@ -1,8 +1,10 @@
 const merge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
-const baseConfig = require('./webpack.base.conf');
+const AutoDLLPLugin = require('autodll-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin');
+const baseConfig = require('./webpack.base.conf');
 const config = require('../config');
 const utils = require('./utils');
 
@@ -13,6 +15,26 @@ module.exports = merge(baseConfig, {
     chunkFilename: utils.assetsPath('js/[id].[chunkhash].js'),
   },
   plugins: [
+    new AutoDLLPLugin({
+      path: utils.assetsPath('js'),
+      filename: '[name].dll.js',
+      entry: {
+        vendor: ['lodash'],
+      },
+      plugins: [
+        new UglifyJsPlugin({
+          cache: true,
+          parallel: true,
+          sourceMap: false,
+          uglifyOptions: {
+            output: {
+              comments: false,
+              beautify: false,
+            },
+          },
+        }),
+      ],
+    }),
     new webpack.optimize.SplitChunksPlugin({
       chunks: 'all',
       minSize: 30000,

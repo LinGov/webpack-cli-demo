@@ -27,25 +27,7 @@ module.exports = {
       context: path.resolve(__dirname, '..'),
       manifest: require('./vendor-manifest.json'),
     }), */
-    new AutoDLLPLugin({
-      filename: '[name].dll.js',
-      entry: {
-        vendor: ['lodash'],
-      },
-      plugins: [
-        new UglifyJsPlugin({
-          cache: true,
-          parallel: true,
-          sourceMap: false,
-          uglifyOptions: {
-            output: {
-              comments: false,
-              beautify: false,
-            },
-          },
-        }),
-      ],
-    }),
+
     new webpack.NoEmitOnErrorsPlugin(),
   ],
 };

@@ -16,6 +16,19 @@ module.exports = merge(baseConfig, {
     filename: utils.assetsPath('js/[name].[chunkhash].js'),
     chunkFilename: utils.assetsPath('js/[id].[chunkhash].js'),
   },
+  /*
+  optimization: {
+    runtimeChunk: 'single',
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all',
+        },
+      },
+    },
+  }, */
   plugins: [
     new webpack.HashedModuleIdsPlugin(),
     // enable scope hoisting

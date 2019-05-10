@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "node build/dev-server.js",
     "dll": "webpack --config build/webpack.dll.conf.js",
-    "build": "cross-env NODE_ENV=production node build/build.js",
+    "build": "cross-env NODE_ENV=development node build/build.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

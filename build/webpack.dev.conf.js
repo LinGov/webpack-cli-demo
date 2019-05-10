@@ -16,6 +16,7 @@ module.exports = merge(baseConfig, {
       template: 'index.html',
       filename: 'index.html',
     }),
+    new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
   ],
 });

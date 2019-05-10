@@ -36,6 +36,7 @@
 
 ### 内置插件
 
+- [webpack.HashedModuleIdsPlugin/webpack.HashedModuleIdsPlugin](https://webpack.docschina.org/guides/caching/#%E8%BE%93%E5%87%BA%E6%96%87%E4%BB%B6%E7%9A%84%E6%96%87%E4%BB%B6%E5%90%8D-output-filename-)：保证输出文件名的一致性以便于缓存。
 - [webpack.optimize.ModuleConcatenationPlugin](https://doc.webpack-china.org/plugins/module-concatenation-plugin/): 在构建过程中控制作用域提升，提升代码在浏览器中的执行速度
 - webpack.optimize.SplitChunksPlugin：分割文件
 - webpack.DefinePlugin

@@ -1,8 +1,13 @@
-const path = require('path');
 const webpack = require('webpack');
+const path = require('path');
+const utils = require('./utils');
 
 const config = require('../config');
 const env = process.env.NODE_ENV;
+
+function resolve(dir) {
+  return path.join(__dirname, '..', dir);
+}
 
 module.exports = {
   mode: env === 'production' ? 'production' : 'development',
@@ -20,6 +25,19 @@ module.exports = {
       process.env.NODE_ENV === 'production'
         ? config.build.assetsPublicPath
         : config.dev.assetsPublicPath,
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+        loader: 'url-loader',
+        include: [resolve('src/assets/images')],
+        query: {
+          limit: 8192,
+          name: utils.assetsPath('img/[name].[hash:7].[ext]'),
+        },
+      },
+    ],
   },
   plugins: [
     /*   new webpack.DllReferencePlugin({

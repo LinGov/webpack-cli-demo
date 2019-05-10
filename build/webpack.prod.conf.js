@@ -4,7 +4,9 @@ const webpack = require('webpack');
 const AutoDLLPLugin = require('autodll-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const baseConfig = require('./webpack.base.conf');
+const path = require('path');
 const config = require('../config');
 const utils = require('./utils');
 
@@ -82,5 +84,12 @@ module.exports = merge(baseConfig, {
         removeAttributeQuotes: true,
       },
     }),
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve(__dirname, '../static'),
+        to: config.build.assetsSubDirectory,
+        ignore: ['.*'],
+      },
+    ]),
   ],
 });

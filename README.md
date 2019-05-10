@@ -7,6 +7,7 @@
 - webpack-merge：合并 webpack 配置，抽取 development/production 公共配置。
 - ora
 - chalk
+- rimraf：支持命令行删除。
 - happypack
 - semver
 - eventsource-polyfill
@@ -36,7 +37,7 @@
 
 ### 内置插件
 
-- [webpack.HashedModuleIdsPlugin/webpack.HashedModuleIdsPlugin](https://webpack.docschina.org/guides/caching/#%E8%BE%93%E5%87%BA%E6%96%87%E4%BB%B6%E7%9A%84%E6%96%87%E4%BB%B6%E5%90%8D-output-filename-)：保证输出文件名的一致性以便于缓存。
+- [webpack.HashedModuleIdsPlugin/webpack.HashedModuleIdsPlugin](https://webpack.docschina.org/guides/caching/#%E8%BE%93%E5%87%BA%E6%96%87%E4%BB%B6%E7%9A%84%E6%96%87%E4%BB%B6%E5%90%8D-output-filename-)：这是因为每个 module.id 会默认地基于解析顺序(resolve order)进行增量。也就是说，当解析顺序发生变化，ID 也会随之改变。这两个插件可以保证输出文件名的一致性以便于缓存。
 - [webpack.optimize.ModuleConcatenationPlugin](https://doc.webpack-china.org/plugins/module-concatenation-plugin/): 在构建过程中控制作用域提升，提升代码在浏览器中的执行速度
 - webpack.optimize.SplitChunksPlugin：分割文件
 - webpack.DefinePlugin
@@ -65,3 +66,4 @@
 - sw-precache-webpack-plugin
 - webpack-parallel-uglify-plugin
 - webpack-bundle-analyzer
+- copy-webpack-plugin：拷贝静态资源。

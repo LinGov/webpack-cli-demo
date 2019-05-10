@@ -10,6 +10,5 @@ module.exports = merge(baseConfig, {
       filename: 'index.html',
     }),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoEmitOnErrorsPlugin(),
   ],
 });

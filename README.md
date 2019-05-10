@@ -38,7 +38,7 @@
 
 - webpack.DefinePlugin
 - webpack.HotModuleReplacementPlugin
-- webpack.NoEmitOnErrorsPlugin
+- [webpack.NoEmitOnErrorsPlugin](https://www.webpackjs.com/plugins/no-emit-on-errors-plugin)：在编译出现错误时，使用 NoEmitOnErrorsPlugin 来跳过输出阶段。这样可以确保输出资源不会包含错误。
 - webpack.optimize.ModuleConcatenationPlugin
 - [webpack.DllPlugin](https://webpack.docschina.org/plugins/dll-plugin/)：在构建前预先对第三方库进行构建，创建一个只有 dll 的 bundle(dll-only-bundle) 和与之对应的 manifest.json，用于 DLLReferencePlugin 映射到相关的依赖上去的。
 - [webpack.DllReferencePlugin](https://webpack.docschina.org/plugins/dll-plugin/)：通过引用 webpack.DllPlugin 生成的 manifest.json，避免第三方库的重复构建。
@@ -56,7 +56,8 @@
 - mini-css-extract-plugin
 - [hard-source-webpack-plugin](https://github.com/mzgoddard/hard-source-webpack-plugin)：提供初次构建中间缓存步骤，加快再次构建的速度。
 - optimize-css-assets-webpack-plugin
-- uglifyjs-webpack-plugin
+- [uglifyjs-webpack-plugin](https://www.npmjs.com/package/uglifyjs-webpack-plugin/v/1.3.0)：压缩 js 代码。
+- [webpack-parallel-uglify-plugin](https://github.com/gdborton/webpack-parallel-uglify-plugin)：并行压缩 js 代码，提高效率。
 - add-asset-html-webpack-plugin
 - sw-precache-webpack-plugin
 - webpack-parallel-uglify-plugin

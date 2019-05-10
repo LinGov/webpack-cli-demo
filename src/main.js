@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import 'element-ui';
 import { getStr } from './a';
 function append(id, child) {
   document.getElementById(id).append(_.concat(['hello', child]));

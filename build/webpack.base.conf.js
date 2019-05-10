@@ -22,12 +22,12 @@ module.exports = {
       context: path.resolve(__dirname, '..'),
       manifest: require('./vendor-manifest.json'),
     }), */
-
     new AutoDLLPLugin({
       filename: '[name].dll.js',
       entry: {
         vendor: ['lodash'],
       },
     }),
+    new webpack.NoEmitOnErrorsPlugin(),
   ],
 };

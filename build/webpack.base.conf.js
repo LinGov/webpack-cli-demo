@@ -7,7 +7,8 @@ module.exports = {
   mode: env === 'production' ? 'production' : 'development',
   entry: {
     app: [
-      'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000',
+      // 热重载
+      // 'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000',
       './src/main.js',
     ],
   },

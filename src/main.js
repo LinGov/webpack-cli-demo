@@ -10,4 +10,6 @@ if (module.hot) {
     append('app', getStr());
   });
 }
+
+// 添加子元素
 append('app', getStr());

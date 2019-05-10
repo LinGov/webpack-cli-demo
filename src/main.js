@@ -1,4 +1,4 @@
-import './assets/css/_global.css';
+import './assets/scss/_global.scss';
 import _ from 'lodash';
 import 'element-ui';
 

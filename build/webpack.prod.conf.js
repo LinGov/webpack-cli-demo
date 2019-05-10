@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const baseConfig = require('./webpack.base.conf');
 const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin');
+const config = require('../config');
 
 module.exports = merge(baseConfig, {
   plugins: [
@@ -21,11 +22,6 @@ module.exports = merge(baseConfig, {
           chunks: 'initial',
           // 默认组的优先级为负数，以允许任何自定义缓存组具有更高的优先级（默认值为0）
           priority: -10,
-        },
-        commons: {
-          name: 'commons',
-          test: /[\\/]node_modules[\\/]/,
-          reuseExistingChunk: true,
         },
       },
     }),
@@ -46,7 +42,7 @@ module.exports = merge(baseConfig, {
     }),
     new HtmlWebpackPlugin({
       inject: true,
-      template: 'index.html',
+      template: config.build.index,
       filename: 'index.html',
       minify: {
         removeComments: true,

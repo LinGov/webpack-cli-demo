@@ -4,8 +4,14 @@ const webpack = require('webpack');
 const baseConfig = require('./webpack.base.conf');
 const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin');
 const config = require('../config');
+const utils = require('./utils');
 
 module.exports = merge(baseConfig, {
+  output: {
+    path: config.build.assetsRoot,
+    filename: utils.assetsPath('js/[name].[chunkhash].js'),
+    chunkFilename: utils.assetsPath('js/[id].[chunkhash].js'),
+  },
   plugins: [
     new webpack.optimize.SplitChunksPlugin({
       chunks: 'all',

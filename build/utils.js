@@ -1,3 +1,5 @@
+const config = require('../config');
+const path = require('path');
 exports.prepareUrls = function(protocol, host, port) {
   const url = require('url');
   const chalk = require('chalk');
@@ -54,4 +56,13 @@ exports.prepareUrls = function(protocol, host, port) {
     localUrlForTerminal,
     localUrlForBrowser,
   };
+};
+
+exports.assetsPath = function(_path) {
+  const assetsSubDirectory =
+    process.env.NODE_ENV === 'production'
+      ? config.build.assetsSubDirectory
+      : config.dev.assetsSubDirectory;
+
+  return path.posix.join(assetsSubDirectory, _path);
 };

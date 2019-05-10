@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const AutoDLLPLugin = require('autodll-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const env = process.env.NODE_ENV;
 
 module.exports = {
@@ -19,7 +20,6 @@ module.exports = {
   },
   plugins: [
     /*   new webpack.DllReferencePlugin({
-      inject: true,
       context: path.resolve(__dirname, '..'),
       manifest: require('./vendor-manifest.json'),
     }), */
@@ -28,6 +28,19 @@ module.exports = {
       entry: {
         vendor: ['lodash'],
       },
+      plugins: [
+        new UglifyJsPlugin({
+          cache: true,
+          parallel: true,
+          sourceMap: false,
+          uglifyOptions: {
+            output: {
+              comments: false,
+              beautify: false,
+            },
+          },
+        }),
+      ],
     }),
     new webpack.NoEmitOnErrorsPlugin(),
   ],

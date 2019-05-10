@@ -1,7 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
-const AutoDLLPLugin = require('autodll-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+
 const config = require('../config');
 const env = process.env.NODE_ENV;
 

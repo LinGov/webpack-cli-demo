@@ -15,7 +15,10 @@ module.exports = merge(baseConfig, {
     chunkFilename: utils.assetsPath('js/[id].[chunkhash].js'),
   },
   plugins: [
+    // enable scope hoisting
+    new webpack.optimize.ModuleConcatenationPlugin(),
     new AutoDLLPLugin({
+      inject: true,
       path: utils.assetsPath('js'),
       filename: '[name].dll.js',
       entry: {

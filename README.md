@@ -36,6 +36,7 @@
 
 ### 内置插件
 
+- [webpack.optimize.ModuleConcatenationPlugin](https://doc.webpack-china.org/plugins/module-concatenation-plugin/): 在构建过程中控制作用域提升，提升代码在浏览器中的执行速度
 - webpack.optimize.SplitChunksPlugin：分割文件
 - webpack.DefinePlugin
 - webpack.HotModuleReplacementPlugin

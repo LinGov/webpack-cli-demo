@@ -2,6 +2,8 @@ const webpack = require('webpack');
 const path = require('path');
 const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const ProgressBarPlugin = require('progress-bar-webpack-plugin');
+const chalk = require('chalk');
 const utils = require('./utils');
 const config = require('../config');
 const env = process.env.NODE_ENV;
@@ -85,6 +87,12 @@ module.exports = {
     ],
   },
   plugins: [
+    new ProgressBarPlugin({
+      format:
+        '  build [:bar] ' +
+        chalk.green.bold(':percent') +
+        ' (:elapsed seconds)',
+    }),
     /*   new webpack.DllReferencePlugin({
       context: path.resolve(__dirname, '..'),
       manifest: require('./vendor-manifest.json'),

@@ -11,7 +11,7 @@ const path = require('path');
 const config = require('../config');
 const utils = require('./utils');
 
-module.exports = merge(baseConfig, {
+const prodConfig = merge(baseConfig, {
   output: {
     path: config.build.assetsRoot,
     filename: utils.assetsPath('js/[name].[chunkhash].js'),
@@ -114,3 +114,11 @@ module.exports = merge(baseConfig, {
     ]),
   ],
 });
+
+if (config.build.bundleAnalyzerReport) {
+  const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
+    .BundleAnalyzerPlugin;
+  prodConfig.plugins.push(new BundleAnalyzerPlugin());
+}
+
+module.exports = prodConfig;

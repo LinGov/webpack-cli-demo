@@ -5,7 +5,7 @@
 ## library
 
 - webpack-merge：合并 webpack 配置，抽取 development/production 公共配置。
-- ora
+- ora：转圈动画
 - chalk
 - rimraf：支持命令行删除。
 - happypack
@@ -72,3 +72,4 @@
 - webpack-parallel-uglify-plugin
 - webpack-bundle-analyzer
 - copy-webpack-plugin：拷贝静态资源。
+- progress-bar-webpack-plugin：构建进度条。

@@ -31,7 +31,7 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        loader: 'babel-loader',
+        use: ['thread-loader', 'babel-loader'],
         include: [
           resolve('src'),
           resolve('test'),
@@ -45,6 +45,7 @@ module.exports = {
       {
         test: /\.(sa|sc|c)ss$/,
         use: [
+          // 'thread-loader',
           {
             loader: MiniCssExtractPlugin.loader,
             options: {

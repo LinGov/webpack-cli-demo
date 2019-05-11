@@ -19,10 +19,14 @@
 - connect-history-api-fallback
 - cross-env：屏蔽开发所处操作系统差异，提供一致的设置 Node 环境变量的命令。
 - lint-staged
+- [happypack](https://github.com/amireh/happypack)：支持部分 loader 进行并行的资源处理，不再继续维护，可 wepback4 和 thread-loader 进行替换。
+- autoprefixer：css 自动添加浏览器兼容前缀，配合 postcss-loader 使用。
 
 ## loader
 
 - url-loader
+- style-loader
+- postcss-loader
 - css-loader
 - vue-loader
 - vue-style-loader
@@ -32,6 +36,7 @@
 - file-loader
 - vg-sprite-loader
 - eslint-loader
+- thread-loader
 
 ## webpack plugin
 

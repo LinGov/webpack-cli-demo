@@ -102,6 +102,7 @@ module.exports = merge(baseConfig, {
         collapseWhitespace: true,
         removeAttributeQuotes: true,
       },
+      chunksSortMode: 'dependency',
     }),
     new OptimizeCssAssetsPlugin(),
     new CopyWebpackPlugin([

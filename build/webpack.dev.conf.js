@@ -15,6 +15,12 @@ Object.keys(baseConfig.entry).forEach(function(name) {
 
 module.exports = merge(baseConfig, {
   devtool: config.dev.devtool,
+  module: {
+    rules: utils.styleLoaders({
+      sourceMap: config.dev.cssSourceMap,
+      usePostCSS: true,
+    }),
+  },
   plugins: [
     new webpack.DefinePlugin({
       'process.env': require('../config/dev.env'),

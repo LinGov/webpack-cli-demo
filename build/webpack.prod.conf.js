@@ -13,6 +13,13 @@ const utils = require('./utils');
 
 const prodConfig = merge(baseConfig, {
   devtool: config.build.productionSourceMap ? config.build.devtool : false,
+  module: {
+    rules: utils.styleLoaders({
+      sourceMap: config.build.productionSourceMap,
+      extract: true,
+      usePostCSS: true,
+    }),
+  },
   output: {
     path: config.build.assetsRoot,
     filename: utils.assetsPath('js/[name].[chunkhash].js'),

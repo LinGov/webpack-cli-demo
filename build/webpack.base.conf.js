@@ -4,6 +4,9 @@ const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const chalk = require('chalk');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
+
+const vueLoaderConfig = require('./vue-loader.conf');
 const utils = require('./utils');
 const config = require('../config');
 const env = process.env.NODE_ENV;
@@ -32,6 +35,11 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader',
+        options: vueLoaderConfig,
+      },
       {
         test: /\.js$/,
         use: ['thread-loader', 'babel-loader'],
@@ -88,8 +96,9 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ['.js', '.json'],
+    extensions: ['.js', '.vue', '.json'],
     alias: {
+      vue$: 'vue/dist/vue.esm.js',
       '@': resolve('src'),
     },
   },
@@ -116,5 +125,6 @@ module.exports = {
     }),
     new HardSourceWebpackPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
+    new VueLoaderPlugin(),
   ],
 };

@@ -2,10 +2,12 @@ const express = require('express');
 const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
+const httpProxyMiddleware = require('http-proxy-middleware');
 const portfinder = require('portfinder');
+const chalk = require('chalk');
+const config = require('../config');
 const ora = require('ora');
 const utils = require('./utils');
-const chalk = require('chalk');
 const devConfig = require('./webpack.dev.conf');
 const app = express();
 const spinner = ora('building for production...');
@@ -17,8 +19,18 @@ const compiler = webpack(devConfig);
 
 const devMiddleware = webpackDevMiddleware(compiler);
 const hotMiddleware = webpackHotMiddleware(compiler);
+
 app.use(devMiddleware);
 app.use(hotMiddleware);
+
+Object.keys(config.dev.proxyTable).forEach((proxy) => {
+  let options = proxyTable[proxy];
+  if (typeof options === 'string') {
+    options = { target: options };
+  }
+  app.use(proxyMiddleware(options.filter || context, options));
+});
+
 app.use('/static', express.static('./static'));
 
 module.exports = portfinder

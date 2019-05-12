@@ -64,6 +64,7 @@
     "webpack-parallel-uglify-plugin": "^1.1.0"
   },
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "element-ui": "^2.8.2",
     "express": "^4.16.4",
     "lodash": "^4.17.11",

@@ -1,1 +1,1 @@
-console.log('1111222223333333');
+import 'babel-polyfill';

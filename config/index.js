@@ -5,6 +5,7 @@ module.exports = {
     devtool: 'cheap-module-eval-source-map',
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
+    port: 8080,
     proxyTable: {
       '/api': {
         target: 'http://localhost:8085',

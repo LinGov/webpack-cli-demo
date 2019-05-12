@@ -12,16 +12,27 @@ const devConfig = require('./webpack.dev.conf');
 const app = express();
 const spinner = ora('building for production...');
 spinner.start();
-const PORT = (process.env.PORT && Number(process.env.PORT)) || 8080;
+const PORT = (process.env.PORT && Number(process.env.PORT)) || config.dev.port;
 portfinder.basePort = PORT;
 
 const compiler = webpack(devConfig);
 
-const devMiddleware = webpackDevMiddleware(compiler);
+const devMiddleware = webpackDevMiddleware(compiler, {
+  publicPath: devConfig.output.publicPath,
+  quiet: true,
+});
+
 const hotMiddleware = webpackHotMiddleware(compiler);
 
 app.use(devMiddleware);
 app.use(hotMiddleware);
+
+compiler.plugin('compilation', function(compilation) {
+  compilation.plugin('html-webpack-plugin-after-emit', function(data, cb) {
+    hotMiddleware.publish({ action: 'reload' });
+    cb();
+  });
+});
 
 const proxyTable = config.dev.proxyTable;
 Object.keys(proxyTable).forEach((proxy) => {

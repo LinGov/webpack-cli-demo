@@ -6,6 +6,12 @@ const config = require('../config');
 const utils = require('./utils');
 const baseConfig = require('./webpack.base.conf');
 
+Object.keys(baseConfig.entry).forEach(function(name) {
+  baseConfig.entry[name] = ['./build/dev-client'].concat(
+    baseConfig.entry[name],
+  );
+});
+
 module.exports = merge(baseConfig, {
   devtool: config.dev.devtool,
   plugins: [

@@ -15,11 +15,12 @@ function resolve(dir) {
 module.exports = {
   mode: env === 'production' ? 'production' : 'development',
   entry: {
-    app: [
+    /* app: [
       // 热重载
       'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&noInfo=true&reload=true',
       './src/main.js',
-    ],
+    ], */
+    app: './src/main.js',
   },
   output: {
     path: config.build.assetsRoot,

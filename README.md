@@ -10,9 +10,9 @@
 - rimraf：支持命令行删除。
 - happypack
 - semver
-- eventsource-polyfill
+- eventsource-polyfill：支持 http 事件通信，该项目用于自动刷新页面。
+- http-proxy-middleware：本地 http 代理插件。
 - portfinder：在默认端口被占用的情况下，往后查找空闲端口并返回空闲的端口号。
-- http-proxy-middleware
 - require-nocache
 - uglify-es
 - opn
@@ -60,7 +60,6 @@
 - [webpack-dev-middleware](https://github.com/webpack/webpack-dev-middleware)：webpack-dev-middleware 是一个封装器(wrapper)，它可以把 webpack 处理过的文件发送到一个 server。
 - [webpack-hot-middleware](https://github.com/webpack-contrib/webpack-hot-middleware)：模块热重载中间件。
 - webpack-build-notifier
-- http-proxy-middleware：本地 http 代理插件。
 - [friendly-errors-webpack-plugin](https://www.npmjs.com/package/friendly-errors-webpack-plugin)：webpack 构建过程添加友好的错误提示。
 - [html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin#options)：在指定的 template 中动态插入 js 变量、通过内置变量动态生成/插入标签、压缩 html 格式。
 - progress-bar-webpack-plugin

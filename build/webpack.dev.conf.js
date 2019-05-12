@@ -2,6 +2,7 @@ const merge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const AutoDLLPLugin = require('autodll-webpack-plugin');
+const WebpackBuildNotifierPlugin = require('webpack-build-notifier');
 const config = require('../config');
 const utils = require('./utils');
 const baseConfig = require('./webpack.base.conf');
@@ -17,6 +18,9 @@ module.exports = merge(baseConfig, {
   plugins: [
     new webpack.DefinePlugin({
       'process.env': require('../config/dev.env'),
+    }),
+    new WebpackBuildNotifierPlugin({
+      suppressSuccess: true,
     }),
     new AutoDLLPLugin({
       path: utils.assetsPath('js'),

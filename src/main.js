@@ -1,4 +1,5 @@
 import 'babel-polyfill';
+import './assets/css/_global.css';
 import Vue from 'vue';
 import App from './App';
 

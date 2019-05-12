@@ -49,23 +49,30 @@ module.exports = {
         ],
       },
       {
-        test: /\.css$/,
-        loaders: ['style-loader', 'css-loader'],
-      },
-      {
         test: /\.(sa|sc|c)ss$/,
-        use: [
-          // 'thread-loader',
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              hmr: devMode,
-            },
-          },
-          'css-loader',
-          'postcss-loader',
-          'sass-loader',
-        ],
+        use:
+          env === 'production'
+            ? [
+                MiniCssExtractPlugin.loader,
+                'css-loader?importLoaders=1',
+                'postcss-loader',
+              ]
+            : [
+                'css-hot-loader',
+                {
+                  loader: MiniCssExtractPlugin.loader,
+                  options: {
+                    hmr: devMode,
+                  },
+                },
+                {
+                  loader: 'css-loader',
+                  options: {
+                    importLoaders: 1,
+                  },
+                },
+                'postcss-loader',
+              ],
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,

@@ -87,6 +87,12 @@ module.exports = {
       },
     ],
   },
+  resolve: {
+    extensions: ['.js', '.json'],
+    alias: {
+      '@': resolve('src'),
+    },
+  },
   plugins: [
     new ProgressBarPlugin({
       format:

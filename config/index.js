@@ -17,7 +17,7 @@ module.exports = {
     },
   },
   build: {
-    productionSourceMap: true,
+    productionSourceMap: false,
     devtool: '#source-map',
     index: path.resolve(__dirname, '../index.html'),
     assetsRoot: path.resolve(__dirname, '../dist'),

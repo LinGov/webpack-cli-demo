@@ -50,6 +50,7 @@ module.exports = {
       },
       {
         test: /\.(sa|sc|c)ss$/,
+        include: [],
         use:
           env === 'production'
             ? [

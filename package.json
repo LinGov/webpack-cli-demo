@@ -1,5 +1,5 @@
 {
-  "name": "webpack-demo",
+  "name": "webpack-cli-demo",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LinGov/webpack-demo.git"
+    "url": "git+https://github.com/LinGov/webpack-cli-demo.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/LinGov/webpack-demo/issues"
+    "url": "https://github.com/LinGov/webpack-cli-demo/issues"
   },
-  "homepage": "https://github.com/LinGov/webpack-demo#readme",
+  "homepage": "https://github.com/LinGov/webpack-cli-demo#readme",
   "devDependencies": {
     "address": "^1.1.0",
     "autodll-webpack-plugin": "^0.4.2",

@@ -5,7 +5,15 @@ module.exports = {
     devtool: 'cheap-module-eval-source-map',
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      '/api': {
+        target: 'http://localhost:8085',
+        pathRewrite: {
+          '^/api': '/',
+        },
+        changeOrigin: true,
+      },
+    },
   },
   build: {
     productionSourceMap: true,

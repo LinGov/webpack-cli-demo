@@ -1,1 +1,1 @@
-export const getStr = () => 'world';
+export const getStr = () => 'world111111';

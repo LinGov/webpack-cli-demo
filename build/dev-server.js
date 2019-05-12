@@ -23,12 +23,13 @@ const hotMiddleware = webpackHotMiddleware(compiler);
 app.use(devMiddleware);
 app.use(hotMiddleware);
 
-Object.keys(config.dev.proxyTable).forEach((proxy) => {
+const proxyTable = config.dev.proxyTable;
+Object.keys(proxyTable).forEach((proxy) => {
   let options = proxyTable[proxy];
   if (typeof options === 'string') {
     options = { target: options };
   }
-  app.use(proxyMiddleware(options.filter || context, options));
+  app.use(httpProxyMiddleware(options.filter || proxy, options));
 });
 
 app.use(require('connect-history-api-fallback')());

@@ -31,6 +31,8 @@ Object.keys(config.dev.proxyTable).forEach((proxy) => {
   app.use(proxyMiddleware(options.filter || context, options));
 });
 
+app.use(require('connect-history-api-fallback')());
+
 app.use('/static', express.static('./static'));
 
 module.exports = portfinder

@@ -21,6 +21,7 @@
 - lint-staged
 - [happypack](https://github.com/amireh/happypack)：支持部分 loader 进行并行的资源处理，不再继续维护，可 wepback4 和 thread-loader 进行替换。
 - autoprefixer：css 自动添加浏览器兼容前缀，配合 postcss-loader 使用。
+- connect-history-api-fallback：支持 h5 history 模式。
 
 ## loader
 

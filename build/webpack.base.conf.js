@@ -5,7 +5,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const chalk = require('chalk');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
-
 const vueLoaderConfig = require('./vue-loader.conf');
 const utils = require('./utils');
 const config = require('../config');

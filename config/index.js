@@ -17,6 +17,7 @@ module.exports = {
         changeOrigin: true,
       },
     },
+    autoOpenBrowse: true,
   },
   build: {
     productionSourceMap: false,

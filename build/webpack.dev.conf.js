@@ -2,10 +2,12 @@ const merge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const AutoDLLPLugin = require('autodll-webpack-plugin');
+const config = require('../config');
 const utils = require('./utils');
 const baseConfig = require('./webpack.base.conf');
 
 module.exports = merge(baseConfig, {
+  devtool: config.dev.devtool,
   plugins: [
     new AutoDLLPLugin({
       path: utils.assetsPath('js'),

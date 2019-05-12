@@ -12,6 +12,7 @@ const config = require('../config');
 const utils = require('./utils');
 
 const prodConfig = merge(baseConfig, {
+  devtool: config.build.productionSourceMap ? config.build.devtool : false,
   output: {
     path: config.build.assetsRoot,
     filename: utils.assetsPath('js/[name].[chunkhash].js'),
@@ -80,6 +81,7 @@ const prodConfig = merge(baseConfig, {
     }),
     new ParallelUglifyPlugin({
       cache: './cache',
+      sourceMap: false,
       uglifyJS: {
         output: {
           comments: false,

@@ -70,5 +70,9 @@ module.exports = portfinder
         console.log(err);
         return;
       }
+      let autoOpenBrowser = !!config.dev.autoOpenBrowse;
+      if (autoOpenBrowser) {
+        utils.startBrowserProcess(urls.localUrlForBrowser);
+      }
     });
   });

@@ -9,6 +9,9 @@ const baseConfig = require('./webpack.base.conf');
 module.exports = merge(baseConfig, {
   devtool: config.dev.devtool,
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env': require('../config/dev.env'),
+    }),
     new AutoDLLPLugin({
       path: utils.assetsPath('js'),
       filename: '[name].dll.js',

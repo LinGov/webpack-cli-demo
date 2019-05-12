@@ -32,6 +32,9 @@ const prodConfig = merge(baseConfig, {
     },
   }, */
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env': require('../config/prod.env'),
+    }),
     new webpack.HashedModuleIdsPlugin(),
     // enable scope hoisting
     new webpack.optimize.ModuleConcatenationPlugin(),

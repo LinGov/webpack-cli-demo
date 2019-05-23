@@ -101,9 +101,11 @@ exports.cssLoaders = function(options) {
 
     // Extract CSS when that option is specified
     // (which is the case during production build)
-
-      return ['vue-style-loader'].concat(loaders);
-
+    if (options.extract) {
+      return [MiniCssExtractPlugin.loader].concat(loaders)
+    } else {
+      return ['vue-style-loader'].concat(loaders)
+    }
   }
 
   // https://vue-loader.vuejs.org/en/configurations/extract-css.html

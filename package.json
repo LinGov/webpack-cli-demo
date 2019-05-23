@@ -7,9 +7,11 @@
     "dev": "node build/dev-server.js",
     "start": "npm run dev",
     "dll": "webpack --config build/webpack.dll.conf.js",
-    "build": "cross-env NODE_ENV=production node build/build.js",
+    "build": "cross-env NODE_ENV=development node build/build.js",
     "docker:dev": "docker-compose -f ./docker/docker-compose.dev.yml up",
     "docker:build": "docker-compose -f ./docker/docker-compose.dev.yml build",
+    "docker-prod:dev": "docker-compose -f ./docker/docker-compose.yml up",
+    "docker-prod:build": "docker-compose -f ./docker/docker-compose.yml build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

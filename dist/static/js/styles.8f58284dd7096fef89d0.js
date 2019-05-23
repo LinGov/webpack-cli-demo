@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([["styles"],{eR29:function(o,n,s){var t=s("tP9B");"string"==typeof t&&(t=[[o.i,t,""]]),t.locals&&(o.exports=t.locals);(0,s("SZ7m").default)("68956839",t,!1,{})},tP9B:function(o,n,s){(o.exports=s("JPst")(!1)).push([o.i,".red {\n  color: blue;\n}\n",""])}}]);

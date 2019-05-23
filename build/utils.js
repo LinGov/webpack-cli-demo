@@ -1,5 +1,6 @@
 const config = require('../config');
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 exports.prepareUrls = function(protocol, host, port) {
   const url = require('url');
   const chalk = require('chalk');

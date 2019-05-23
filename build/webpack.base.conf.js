@@ -47,7 +47,12 @@ module.exports = {
           env === 'production'
             ? [
                 MiniCssExtractPlugin.loader,
-                'css-loader?importLoaders=1',
+                {
+                  loader: 'css-loader',
+                  options: {
+                    importLoaders: 1,
+                  },
+                },
                 'postcss-loader',
               ]
             : [
@@ -61,7 +66,7 @@ module.exports = {
                 {
                   loader: 'css-loader',
                   options: {
-                    importLoaders: 1,
+                    importLoaders: 2,
                   },
                 },
                 'postcss-loader',

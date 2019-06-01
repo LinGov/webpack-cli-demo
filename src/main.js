@@ -1,7 +1,6 @@
 import 'babel-polyfill';
-import './assets/css/_global.css';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
 
-window.onload = function() {
-  console.log('1')
-}
-
+ReactDOM.render(<App />, document.getElementById('app'));

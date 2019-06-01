@@ -50,6 +50,7 @@ module.exports = {
                 {
                   loader: 'css-loader',
                   options: {
+                    modules: true,
                     importLoaders: 1,
                   },
                 },
@@ -66,6 +67,7 @@ module.exports = {
                 {
                   loader: 'css-loader',
                   options: {
+                    modules: true,
                     importLoaders: 2,
                   },
                 },
@@ -107,10 +109,7 @@ module.exports = {
   },
   plugins: [
     new ProgressBarPlugin({
-      format:
-        '  build [:bar] ' +
-        chalk.green.bold(':percent') +
-        ' (:elapsed seconds)',
+      format: '  build [:bar] ' + chalk.green.bold(':percent') + ' (:elapsed seconds)',
     }),
     /*   new webpack.DllReferencePlugin({
       context: path.resolve(__dirname, '..'),

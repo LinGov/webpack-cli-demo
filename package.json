@@ -41,6 +41,7 @@
     "cross-env": "^5.2.0",
     "css-hot-loader": "^1.4.4",
     "css-loader": "^2.1.1",
+    "cz-conventional-changelog": "^3.0.2",
     "eventsource-polyfill": "^0.9.6",
     "file-loader": "^3.0.1",
     "friendly-errors-webpack-plugin": "^1.7.0",
@@ -82,5 +83,10 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
 }

@@ -75,7 +75,7 @@
     "babel-polyfill": "^6.26.0",
     "element-ui": "^2.8.2",
     "express": "^4.16.4",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.13",
     "vue": "^2.6.10"
   },
   "browserslist": [
